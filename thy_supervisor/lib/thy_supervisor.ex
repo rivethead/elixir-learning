@@ -84,7 +84,7 @@ defmodule ThySupervisor do
     end
   end
 
-  def handle_info({:EXIT, from, :killed}, state) do
+  def handle_info({:EXIT, from, :normal}, state) do
     new_state = state |> Map.delete(from)
     {:noreply, new_state}
   end
@@ -106,6 +106,7 @@ defmodule ThySupervisor do
   defp start_child({mod, fun, args}) do
     case apply(mod, fun, args) do
       pid when is_pid(pid) ->
+        Process.link(pid)
         {:ok, pid}
 
       _ ->
