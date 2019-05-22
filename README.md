@@ -6,3 +6,4 @@
 * http://blog.plataformatec.com.br/2018/11/starting-with-elixir-the-study-guide/
 * https://schneider.dev/blog/elixir-phoenix-absinthe-graphql-react-apollo-absurdly-deep-dive/
 * https://devhints.io/elixir
+* https://learnxinyminutes.com/docs/elixir/
